@@ -23,19 +23,13 @@ let UserController = class UserController {
     }
     async userList(query) {
         this.logService.log('userList控制器');
-        return await this.userService.userList();
+        return 'await this.userService.userList()';
     }
     async userListById(param) {
         return await this.userService.userDetail();
     }
     async addUser(body) {
         return await this.userService.addUser();
-    }
-    loginPage() {
-        return { "title": "Login Page" };
-    }
-    login(body, res) {
-        res.redirect('/user');
     }
 };
 __decorate([
@@ -59,21 +53,6 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "addUser", null);
-__decorate([
-    common_1.Get('login'),
-    common_1.Render('login'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], UserController.prototype, "loginPage", null);
-__decorate([
-    common_1.Post('login'),
-    __param(0, common_1.Body()),
-    __param(1, common_1.Response()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", void 0)
-], UserController.prototype, "login", null);
 UserController = __decorate([
     common_1.Controller('user'),
     __metadata("design:paramtypes", [user_service_1.UserService,

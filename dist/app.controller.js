@@ -22,7 +22,7 @@ let AppController = class AppController {
 };
 __decorate([
     common_1.Get(),
-    common_1.Render('index'),
+    common_1.Render('login'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)

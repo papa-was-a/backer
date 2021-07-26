@@ -7,8 +7,4 @@ export declare class UserController {
     userList(query: any): Promise<string>;
     userListById(param: any): Promise<string>;
     addUser(body: any): Promise<string>;
-    loginPage(): {
-        title: string;
-    };
-    login(body: any, res: any): void;
 }
