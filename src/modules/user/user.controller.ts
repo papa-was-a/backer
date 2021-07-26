@@ -1,4 +1,4 @@
-import { Controller, Get, Query, Param, Post, Body } from '@nestjs/common';
+import { Controller, Get, Query, Param, Post, Body, Render, Response } from '@nestjs/common';
 import { UserService } from './user.service'
 import { LogService } from '../log/log.service'
 
@@ -15,18 +15,26 @@ export class UserController {
     // 只接受部分参数
     async userList(@Query('name') query: any): Promise<string> {
         this.logService.log('userList控制器')
-        console.log('queryqueryqueryquery', query)
         return await this.userService.userList()
     }
-    @Get(":id")
+    @Get("/:id")
     async userListById(@Param() param: any): Promise<string> {
-        console.log('queryqueryqueryquery', param)
         return await this.userService.userDetail()
     }
 
     @Post()
     async addUser(@Body() body: any) {
-        console.log('queryqueryqueryquery', body)
         return await this.userService.addUser()
+    }
+
+    @Get('login')
+    @Render('login')
+    loginPage() {
+        return {"title": "Login Page"}
+    }
+    @Post('login')
+    login(@Body() body, @Response() res) {
+        // 如果在控制器函数中使用了@Response()就不能使用 return 返回值
+        res.redirect('/user')
     }
 }

@@ -27,7 +27,8 @@ jobs:
       run: cnpm i 
 
     - name: Build weapp
-      run: yarn deploy:init
+      yarn build
+      # run: yarn deploy:init
       # run: yarn start:prod
 
     - name: Generate private key for upload

@@ -5,7 +5,7 @@ import { LogModule } from '../log/log.module';
 
 @Module({
   controllers: [UserController],
-  imports: [LogModule.register('user======')],
+  imports: [LogModule.register('user')],
   providers: [UserService]
 })
 export class UserModule {}
