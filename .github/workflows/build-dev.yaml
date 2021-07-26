@@ -1,0 +1,32 @@
+name: backer-dev
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: yarn
+
+    - name: Build weapp
+      run: yarn start:dev
+
+    - name: Generate private key for upload
+      run: echo "$BACKERSECRET" > private.key
+      env:
+        BACKERSECRET: ${{ secrets.BACKERSECRET }}
