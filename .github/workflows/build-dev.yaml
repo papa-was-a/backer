@@ -32,4 +32,4 @@ jobs:
     - name: Generate private key for upload
       run: echo "$BACKERSECRET" > private.key
       env:
-        BACKERSECRET: ${{ .BACKERSECRET }}
+        BACKERSECRET: ${{ secrets.BACKERSECRET }}
