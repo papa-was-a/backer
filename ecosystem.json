@@ -16,7 +16,7 @@
         "production": {
             "user": "root",
             "host": ["39.108.2.87"],
-            "port": 80,
+            "port": 8080,
             "ref": "origin/dev",
             "repo": "git@github.com:papa-was-a/backer.git",
             "path": "/www/backer-server",
