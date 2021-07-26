@@ -21,7 +21,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
-      run: yarn
+      run: cnpm i
 
     - name: Build weapp
       run: yarn start:dev
