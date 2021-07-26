@@ -1,0 +1,30 @@
+{
+    "apps": [
+        {
+            "name": "backer-server",
+            "script": "main.ts",
+            "env": {
+                "NODE_ENV": "development",
+                "COMMON_VARIABLE": "true"
+            },
+            "env_production": {
+                "NODE_ENV": "production"
+            }
+        }
+    ],
+    "deploy": {
+        "production": {
+            "user": "root",
+            "host": ["39.108.2.87"],
+            "port": 8080,
+            "ref": "origin/master",
+            "repo": "git@github.com:papa-was-a/backer.git",
+            "path": "/backer-server",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "post-deploy": "cnpm install && yarn start:prod",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    }
+}
