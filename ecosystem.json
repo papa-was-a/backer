@@ -17,9 +17,9 @@
             "user": "root",
             "host": ["39.108.2.87"],
             "port": 8080,
-            "ref": "origin/master",
+            "ref": "origin/dev",
             "repo": "git@github.com:papa-was-a/backer.git",
-            "path": "/backer-server",
+            "path": "/www/backer-server",
             "ssh_options": "StrictHostKeyChecking=no",
             "post-deploy": "cnpm install && yarn start:prod",
             "env": {
