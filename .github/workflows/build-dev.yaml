@@ -20,6 +20,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Install cnpm
+      run: npm i -g cnpm
+
     - name: Install dependencies
       run: cnpm i
 
@@ -29,4 +32,4 @@ jobs:
     - name: Generate private key for upload
       run: echo "$BACKERSECRET" > private.key
       env:
-        BACKERSECRET: ${{ secrets.BACKERSECRET }}
+        BACKERSECRET: ${{ .BACKERSECRET }}

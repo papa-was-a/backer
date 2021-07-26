@@ -20,6 +20,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Install cnpm
+      run: npm i -g cnpm
+
     - name: Install dependencies
       run: cnpm i 
 
