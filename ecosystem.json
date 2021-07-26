@@ -2,7 +2,7 @@
     "apps": [
         {
             "name": "backer-server",
-            "script": "main.ts",
+            "script": "src/main.ts",
             "env": {
                 "NODE_ENV": "development",
                 "COMMON_VARIABLE": "true"
@@ -16,7 +16,7 @@
         "production": {
             "user": "root",
             "host": ["39.108.2.87"],
-            "port": 8080,
+            "port": 80,
             "ref": "origin/dev",
             "repo": "git@github.com:papa-was-a/backer.git",
             "path": "/www/backer-server",
