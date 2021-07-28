@@ -15,28 +15,37 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
 const user_service_1 = require("./user.service");
-const log_service_1 = require("../log/log.service");
 let UserController = class UserController {
-    constructor(userService, logService) {
+    constructor(userService) {
         this.userService = userService;
-        this.logService = logService;
     }
-    async userList(query) {
-        this.logService.log('userList控制器');
-        return 'hello world';
+    index(req) {
+        console.log(req.session);
+        return '用户主页';
+    }
+    login(res, req) {
+        req.session.name = 'hello';
+        res.send('登录页面');
     }
 };
 __decorate([
     common_1.Get(),
-    __param(0, common_1.Query('name')),
+    __param(0, common_1.Request()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
-], UserController.prototype, "userList", null);
+    __metadata("design:returntype", String)
+], UserController.prototype, "index", null);
+__decorate([
+    common_1.Get('login'),
+    __param(0, common_1.Response()),
+    __param(1, common_1.Request()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "login", null);
 UserController = __decorate([
     common_1.Controller('user'),
-    __metadata("design:paramtypes", [user_service_1.UserService,
-        log_service_1.LogService])
+    __metadata("design:paramtypes", [user_service_1.UserService])
 ], UserController);
 exports.UserController = UserController;
 //# sourceMappingURL=user.controller.js.map

@@ -1,8 +1,13 @@
 import { UserService } from './user.service';
-import { LogService } from '../log/log.service';
 export declare class UserController {
     protected readonly userService: UserService;
-    private readonly logService;
-    constructor(userService: UserService, logService: LogService);
-    userList(query: any): Promise<string>;
+    constructor(userService: UserService);
+    index(req: {
+        [key: string]: any;
+    }): string;
+    login(res: {
+        [key: string]: any;
+    }, req: {
+        [key: string]: any;
+    }): void;
 }
