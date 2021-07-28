@@ -1,4 +1,4 @@
-import { Controller, Get, Query, Param, Post, Body, Render, Response } from '@nestjs/common';
+import { Controller, Get, Query, Param, Post, Body } from '@nestjs/common';
 import { UserService } from './user.service'
 import { LogService } from '../log/log.service'
 
@@ -15,15 +15,15 @@ export class UserController {
     // 只接受部分参数
     async userList(@Query('name') query: any): Promise<string> {
         this.logService.log('userList控制器')
-        return 'await this.userService.userList()'
+        return 'hello world'
     }
-    @Get("/:id")
-    async userListById(@Param() param: any): Promise<string> {
-        return await this.userService.userDetail()
-    }
+    // @Get("/:id")
+    // async userListById(@Param() param: any): Promise<string> {
+    //     return await this.userService.userDetail()
+    // }
 
-    @Post()
-    async addUser(@Body() body: any) {
-        return await this.userService.addUser()
-    }
+    // @Post()
+    // async addUser(@Body() body: any) {
+    //     return await this.userService.addUser()
+    // }
 }

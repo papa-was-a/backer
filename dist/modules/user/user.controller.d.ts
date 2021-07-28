@@ -5,6 +5,4 @@ export declare class UserController {
     private readonly logService;
     constructor(userService: UserService, logService: LogService);
     userList(query: any): Promise<string>;
-    userListById(param: any): Promise<string>;
-    addUser(body: any): Promise<string>;
 }

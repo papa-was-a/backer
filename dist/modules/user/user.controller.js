@@ -23,13 +23,7 @@ let UserController = class UserController {
     }
     async userList(query) {
         this.logService.log('userList控制器');
-        return 'await this.userService.userList()';
-    }
-    async userListById(param) {
-        return await this.userService.userDetail();
-    }
-    async addUser(body) {
-        return await this.userService.addUser();
+        return 'hello world';
     }
 };
 __decorate([
@@ -39,20 +33,6 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "userList", null);
-__decorate([
-    common_1.Get("/:id"),
-    __param(0, common_1.Param()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
-], UserController.prototype, "userListById", null);
-__decorate([
-    common_1.Post(),
-    __param(0, common_1.Body()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
-], UserController.prototype, "addUser", null);
 UserController = __decorate([
     common_1.Controller('user'),
     __metadata("design:paramtypes", [user_service_1.UserService,
