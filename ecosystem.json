@@ -21,7 +21,7 @@
             "repo": "git@github.com:papa-was-a/backer.git",
             "path": "/www/backer-server",
             "ssh_options": "StrictHostKeyChecking=no",
-            "post-deploy": "cnpm install && npm run db && pm2 start server.js",
+            "post-deploy": "cnpm install && npm run db && pm2 start dist/main.js",
             "env": {
                 "NODE_ENV": "production"
             }
