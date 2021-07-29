@@ -5,10 +5,5 @@ export declare class UserController {
     index(req: {
         [key: string]: any;
     }): string;
-    login(res: {
-        [key: string]: any;
-    }, req: {
-        [key: string]: any;
-    }): void;
-    userListById(): Promise<string>;
+    addUser(body: any): Promise<string>;
 }

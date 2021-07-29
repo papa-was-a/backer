@@ -20,15 +20,10 @@ let UserController = class UserController {
         this.userService = userService;
     }
     index(req) {
-        console.log(req.session);
         return '用户主页';
     }
-    login(res, req) {
-        req.session.name = 'hello';
-        res.send('登录页面');
-    }
-    async userListById() {
-        return await this.userService.userDetail();
+    async addUser(body) {
+        return await this.userService.addUser(body);
     }
 };
 __decorate([
@@ -39,19 +34,12 @@ __decorate([
     __metadata("design:returntype", String)
 ], UserController.prototype, "index", null);
 __decorate([
-    common_1.Get('login'),
-    __param(0, common_1.Response()),
-    __param(1, common_1.Request()),
+    common_1.Post(),
+    __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", void 0)
-], UserController.prototype, "login", null);
-__decorate([
-    common_1.Get("/:id"),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], UserController.prototype, "userListById", null);
+], UserController.prototype, "addUser", null);
 UserController = __decorate([
     common_1.Controller('user'),
     __metadata("design:paramtypes", [user_service_1.UserService])

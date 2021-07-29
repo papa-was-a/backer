@@ -14,16 +14,17 @@ let UserService = class UserService {
         return '用户列表';
     }
     async userDetail() {
+        return '用户详情';
+    }
+    async addUser(body) {
+        console.log(body);
         request_1.default.create({
-            request_url: '111',
+            request_url: Date.now().toString(),
             request_data: '222',
             request_header: '333',
             method: '444'
         });
-        return '用户详情';
-    }
-    async addUser() {
-        return '添加用户';
+        return '添加用户成功';
     }
 };
 UserService = __decorate([
