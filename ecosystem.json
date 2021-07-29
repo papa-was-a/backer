@@ -2,7 +2,7 @@
     "apps": [
         {
             "name": "backer-server",
-            "script": "src/main.ts",
+            "script": "dist/main.js",
             "env": {
                 "NODE_ENV": "development",
                 "COMMON_VARIABLE": "true"
@@ -21,7 +21,7 @@
             "repo": "git@github.com:papa-was-a/backer.git",
             "path": "/www/backer-server",
             "ssh_options": "StrictHostKeyChecking=no",
-            "post-deploy": "cnpm install && npm run db && yarn start:prod",
+            "post-deploy": "cnpm install && npm run db && yarn build",
             "env": {
                 "NODE_ENV": "production"
             }
