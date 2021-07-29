@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize'
 // new Sequelize('数据库名称', '用户名', '密码', 配置项)
-const sequelize = new Sequelize('backer_db', 'root', '', {
+const sequelize = new Sequelize('backer_db', 'root', 'o8Justin1993?', {
   host: 'localhost', // 主机名称
   dialect: 'mysql', // 连什么类型数据库
   timezone: '+08:00', // 东八时区
