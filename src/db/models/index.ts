@@ -1,5 +1,5 @@
-import RequestModel from './request'
+import UserModel from './user'
 
 export {
-  RequestModel
+  UserModel
 }

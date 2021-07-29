@@ -19,27 +19,47 @@ let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
     }
-    index(req) {
-        return '用户主页';
+    async postUser(body) {
+        console.log(body);
+        return await this.userService.postUser(body);
     }
-    async addUser(body) {
-        return await this.userService.addUser(body);
+    async deleteUser(body) {
+        return await this.userService.deleteUser();
+    }
+    async putUser(body) {
+        return await this.userService.putUser(body);
+    }
+    async getUser() {
+        return await this.userService.getUser();
     }
 };
-__decorate([
-    common_1.Get(),
-    __param(0, common_1.Request()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", String)
-], UserController.prototype, "index", null);
 __decorate([
     common_1.Post(),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], UserController.prototype, "addUser", null);
+], UserController.prototype, "postUser", null);
+__decorate([
+    common_1.Delete(),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "deleteUser", null);
+__decorate([
+    common_1.Put(),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "putUser", null);
+__decorate([
+    common_1.Get(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "getUser", null);
 UserController = __decorate([
     common_1.Controller('user'),
     __metadata("design:paramtypes", [user_service_1.UserService])

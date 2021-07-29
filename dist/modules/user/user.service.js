@@ -8,23 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
 const common_1 = require("@nestjs/common");
-const request_1 = require("../../db/models/request");
+const user_1 = require("../../db/models/user");
 let UserService = class UserService {
-    async userList() {
-        return '用户列表';
+    async postUser(body) {
+        const { name, age, city, email, address } = body;
+        await user_1.default.create({ name, age, city, email, address });
+        return '添加用户成功!!!!';
     }
-    async userDetail() {
+    async deleteUser() {
         return '用户详情';
     }
-    async addUser(body) {
-        console.log(body);
-        request_1.default.create({
-            request_url: Date.now().toString(),
-            request_data: '222',
-            request_header: '333',
-            method: '444'
-        });
-        return '添加用户成功!!!!';
+    async putUser(body) {
+        const { name, age, city, email, address, id } = body;
+        await user_1.default.create({ name, age, city, email, address, id });
+        return '添加修改成功!!!!';
+    }
+    async getUser() {
+        const userList = user_1.default.findAll({});
+        return userList;
     }
 };
 UserService = __decorate([

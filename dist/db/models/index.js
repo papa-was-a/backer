@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RequestModel = void 0;
-const request_1 = require("./request");
-exports.RequestModel = request_1.default;
+exports.UserModel = void 0;
+const user_1 = require("./user");
+exports.UserModel = user_1.default;
 //# sourceMappingURL=index.js.map

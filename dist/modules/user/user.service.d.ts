@@ -1,5 +1,6 @@
 export declare class UserService {
-    userList(): Promise<string>;
-    userDetail(): Promise<string>;
-    addUser(body: any): Promise<string>;
+    postUser(body: any): Promise<string>;
+    deleteUser(): Promise<string>;
+    putUser(body: any): Promise<string>;
+    getUser(): Promise<any[]>;
 }

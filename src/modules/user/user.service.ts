@@ -1,23 +1,25 @@
 import { Injectable } from '@nestjs/common';
-import ErrorLog from '../../db/models/request'
+import User from '../../db/models/user'
 
 @Injectable()
 export class UserService {
-    async userList(): Promise<string>{
-        return '用户列表'
+    async postUser(body): Promise<string>{
+        const { name, age, city, email, address } = body
+        await User.create({ name, age, city, email, address })
+        return '添加用户成功!!!!'
     }
-    async userDetail(): Promise<string>{
+    async deleteUser(): Promise<string>{
         return '用户详情'
     }
-    async addUser(body): Promise<string>{
-        console.log(body);
-        
-        ErrorLog.create({
-            request_url: Date.now().toString(),
-            request_data: '222',
-            request_header: '333',
-            method: '444'
-        })
-        return '添加用户成功!!!!'
+    async putUser(body): Promise<string>{
+        const { name, age, city, email, address, id } = body
+        await User.create({ name, age, city, email, address, id })
+        return '添加修改成功!!!!'
+    }
+    async getUser(): Promise<any[]>{
+        const userList = User.findAll({
+            
+          });
+        return userList
     }
 }

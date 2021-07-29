@@ -1,2 +1,2 @@
-import RequestModel from './request';
-export { RequestModel };
+import UserModel from './user';
+export { UserModel };
