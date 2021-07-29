@@ -21,7 +21,7 @@
             "repo": "git@github.com:papa-was-a/backer.git",
             "path": "/www/backer-server",
             "ssh_options": "StrictHostKeyChecking=no",
-            "post-deploy": "cnpm install && yarn start:prod",
+            "post-deploy": "cnpm install && npm run db && yarn start:prod",
             "env": {
                 "NODE_ENV": "production"
             }
