@@ -18,7 +18,7 @@
             "host": ["39.108.2.87"],
             "port": 3000,
             "ref": "origin/dev",
-            "repo": "git@github.com:papa-was-a/backer.git",
+            "repo": "git@gitee.com:jeamnchan/backer.git",
             "path": "/www/backer-server",
             "ssh_options": "StrictHostKeyChecking=no",
             "post-deploy": "cnpm install && npm run db && pm2 start dist/main.js",
