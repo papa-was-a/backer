@@ -8,11 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
 const common_1 = require("@nestjs/common");
+const request_1 = require("../../db/models/request");
 let UserService = class UserService {
     async userList() {
         return '用户列表';
     }
     async userDetail() {
+        request_1.default.create({
+            request_url: '111',
+            request_data: '222',
+            request_header: '333',
+            method: '444'
+        });
         return '用户详情';
     }
     async addUser() {

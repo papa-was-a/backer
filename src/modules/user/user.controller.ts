@@ -32,10 +32,10 @@ export class UserController {
     //     this.logService.log('userList控制器')
     //     return 'hello world'
     // }
-    // @Get("/:id")
-    // async userListById(@Param() param: any): Promise<string> {
-    //     return await this.userService.userDetail()
-    // }
+    @Get("/:id")
+    async userListById(): Promise<string> {
+        return await this.userService.userDetail()
+    }
 
     // @Post()
     // async addUser(@Body() body: any) {

@@ -10,4 +10,5 @@ export declare class UserController {
     }, req: {
         [key: string]: any;
     }): void;
+    userListById(): Promise<string>;
 }

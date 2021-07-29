@@ -27,6 +27,9 @@ let UserController = class UserController {
         req.session.name = 'hello';
         res.send('登录页面');
     }
+    async userListById() {
+        return await this.userService.userDetail();
+    }
 };
 __decorate([
     common_1.Get(),
@@ -43,6 +46,12 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "login", null);
+__decorate([
+    common_1.Get("/:id"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "userListById", null);
 UserController = __decorate([
     common_1.Controller('user'),
     __metadata("design:paramtypes", [user_service_1.UserService])
